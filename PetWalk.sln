@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6FB06DC6-EA36-48E7-9019-F807BF84163D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPet.Plugin.PetWalk", "VPet.Plugin.PetWalk\VPet.Plugin.PetWalk.csproj", "{6B11CB66-6AD0-7387-E70F-DCE09F1A374D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B11CB66-6AD0-7387-E70F-DCE09F1A374D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B11CB66-6AD0-7387-E70F-DCE09F1A374D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B11CB66-6AD0-7387-E70F-DCE09F1A374D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B11CB66-6AD0-7387-E70F-DCE09F1A374D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE04C712-253C-491A-B3F6-AC3E3C3569E9}
+	EndGlobalSection
+EndGlobal

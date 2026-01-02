@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<OutputType>Library</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWPF>true</UseWPF>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="LinePutScript">
+			<Version>1.11.9</Version>
+		</PackageReference>
+		<PackageReference Include="LinePutScript.Localization.WPF">
+			<Version>1.0.7</Version>
+		</PackageReference>
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+		<PackageReference Include="VPet-Simulator.Core">
+			<Version>1.1.0.50</Version>
+		</PackageReference>
+		<PackageReference Include="VPet-Simulator.Windows.Interface">
+			<Version>1.1.0.50</Version>
+		</PackageReference>
+
+	</ItemGroup>
+	<Target Name="PostBuild_CopyToVPetMod" AfterTargets="Build">
+		<PropertyGroup>
+			<VPetModDir>D:\VPet\VPet-Simulator.Windows\bin\x64\Debug\net8.0-windows\mod\1215_PetWalk\plugin</VPetModDir>
+		</PropertyGroup>
+
+		<MakeDir Directories="$(VPetModDir)" />
+
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(VPetModDir)" SkipUnchangedFiles="true" />
+		<ItemGroup>
+			<JsonOutputs Include="$(TargetDir)*.json" />
+		</ItemGroup>
+
+		<Copy SourceFiles="@(JsonOutputs)" DestinationFolder="$(VPetModDir)" SkipUnchangedFiles="true" Condition="'@(JsonOutputs)' != ''" />
+	</Target>
+</Project>
