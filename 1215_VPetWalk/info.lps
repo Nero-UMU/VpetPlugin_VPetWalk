@@ -1,5 +1,5 @@
 vupmod#VPetWalk:|author#NeroUMU:|gamever#11060:|ver#200:|
-intro#PCat_intro:|
-lang#en:|VPetWalk#VPetWalk:|PCat_intro#The VPet can now be controlled using the arrow keys (↑ ↓ ← →) or WASD on the keyboard.:|
-lang#zh-Hans:|VPetWalk#VPetWalk:|PCat_intro#现在可以使用键盘的方向键（↑ ↓ ← →）或WASD控制桌宠移动了。:|
-lang#zh-Hant:|VPetWalk#VPetWalk:|PCat_intro#現在可以使用鍵盤的方向鍵（↑ ↓ ← →）或WASD控制桌寵移動了。:|
+intro#VPetWalk_intro:|
+lang#en:|VPetWalk#VPetWalk:|VPetWalk_intro#The VPet can now be controlled using the arrow keys (↑ ↓ ← →) or WASD on the keyboard.:|
+lang#zh-Hans:|VPetWalk#VPetWalk:|VPetWalk_intro#现在可以使用键盘的方向键（↑ ↓ ← →）或WASD控制桌宠移动了。:|
+lang#zh-Hant:|VPetWalk#VPetWalk:|VPetWalk_intro#現在可以使用鍵盤的方向鍵（↑ ↓ ← →）或WASD控制桌寵移動了。:|
