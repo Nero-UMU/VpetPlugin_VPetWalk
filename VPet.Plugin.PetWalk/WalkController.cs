@@ -3,13 +3,13 @@ using System.Windows.Threading;
 using VPet_Simulator.Core;
 using static VPet_Simulator.Core.GraphInfo;
 
-namespace VPet.Plugin.PetWalk
+namespace VPet.Plugin.VPetWalk
 {
     public enum WalkDirection { None, Left, Right, Up, Down }
 
     /// <summary>
-    /// 走路控制器：动画(A/B/C) + MoveWindows 定速移动
-    /// 支持 Left / Right / Up(climb) / Down(fall)
+    /// 走路控制器
+    /// 支持 Left / Right / Up / Down
     /// </summary>
     public class WalkController
     {
@@ -24,7 +24,7 @@ namespace VPet.Plugin.PetWalk
         public bool IsWalking { get; private set; }
         public WalkDirection Direction { get; private set; } = WalkDirection.None;
 
-        // 朝向（只区分左右）
+        // 朝向
         private enum FacingLR { Left, Right }
         private FacingLR _facing = FacingLR.Left;
 
@@ -45,7 +45,6 @@ namespace VPet.Plugin.PetWalk
             _ui = main.Dispatcher;
         }
 
-        // ===================== 外部接口 =====================
 
         public void Start(WalkDirection dir)
         {
@@ -59,7 +58,6 @@ namespace VPet.Plugin.PetWalk
                 IsWalking = true;
                 _lastDirForAnim = dir;
 
-                // 只有左右会改变朝向
                 if (dir == WalkDirection.Left) _facing = FacingLR.Left;
                 if (dir == WalkDirection.Right) _facing = FacingLR.Right;
 
@@ -106,7 +104,6 @@ namespace VPet.Plugin.PetWalk
             }), DispatcherPriority.ApplicationIdle);
         }
 
-        // ===================== 动画链 =====================
 
         private void PlayStartThenLoop(int myToken)
         {
@@ -127,7 +124,6 @@ namespace VPet.Plugin.PetWalk
             _main.Display(anim, AnimatType.B_Loop, () => LoopB(anim, myToken));
         }
 
-        // ===================== 位移 =====================
 
         private void StartMoveTimer()
         {
@@ -151,11 +147,11 @@ namespace VPet.Plugin.PetWalk
                             break;
 
                         case WalkDirection.Up:
-                            dy = -StepPx;   // 上下不吃心情
+                            dy = -StepPx;
                             break;
 
                         case WalkDirection.Down:
-                            dy = StepPx;    // 上下不吃心情
+                            dy = StepPx;
                             break;
                     }
 
@@ -172,14 +168,12 @@ namespace VPet.Plugin.PetWalk
             _moveTimer?.Stop();
         }
 
-        // ===================== 动画选择规则 =====================
 
         private string GetAnimByDir(IGameSave.ModeType mood, WalkDirection dir)
         {
             // 使用朝向
             string lr = _facing == FacingLR.Right ? "right" : "left";
 
-            // Up / Down：climb / fall
             if (dir == WalkDirection.Up)
                 return $"climb.{lr}";
             if (dir == WalkDirection.Down)

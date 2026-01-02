@@ -25,7 +25,7 @@
 	</ItemGroup>
 	<Target Name="PostBuild_CopyToVPetMod" AfterTargets="Build">
 		<PropertyGroup>
-			<VPetModDir>D:\VPet\VPet-Simulator.Windows\bin\x64\Debug\net8.0-windows\mod\1215_PetWalk\plugin</VPetModDir>
+			<VPetModDir>..\1215_VPetWalk\plugin</VPetModDir>
 		</PropertyGroup>
 
 		<MakeDir Directories="$(VPetModDir)" />

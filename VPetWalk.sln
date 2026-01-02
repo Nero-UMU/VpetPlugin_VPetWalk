@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPet.Plugin.PetWalk", "VPet.Plugin.PetWalk\VPet.Plugin.PetWalk.csproj", "{6B11CB66-6AD0-7387-E70F-DCE09F1A374D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPet.Plugin.VPetWalk", "VPet.Plugin.PetWalk\VPet.Plugin.VPetWalk.csproj", "{6B11CB66-6AD0-7387-E70F-DCE09F1A374D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
